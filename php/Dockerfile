@@ -27,4 +27,4 @@ RUN cd /tmp && wget -O get-pip.py https://bootstrap.pypa.io/get-pip.py \
  && python get-pip.py
 RUN pip install supervisor
 EXPOSE 80 443 3128
-WORKDIR /data/work/code
+WORKDIR /usr/share/nginx/html
