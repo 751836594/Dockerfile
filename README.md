@@ -3,9 +3,9 @@
 
 <ul>
 <li>
-	新增php镜像:php7.1-alpine(php7.1+nginx+supervisor)
+	新增php镜像:php7.1-alpine(php-fpm(7.1)+nginx+supervisor)
 	<ul>
-	<li>PS:镜像十一alpine为基础镜像,总镜像170M</li>
+	<li>PS:镜像以alpine为基础镜像,总镜像170M</li>
 	<li>创建镜像: sh docker_build.sh</li>
 	<li>生成容器: sh docker_run.sh</li>
 	</ul>
