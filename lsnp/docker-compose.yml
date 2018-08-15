@@ -1,0 +1,45 @@
+version: '2'
+services:
+  php:
+    container_name: lsnp-php
+    build: ./docker/php-fpm
+    image: lsnp/php
+    volumes:
+      - ./work:/var/www/html
+    restart: always
+    privileged: true
+    ports:
+      - "9003:9000"
+      - "9502:9501"
+    networks:
+      - net
+
+  nginx:
+    container_name: lsnp-nginx
+    build: ./docker/nginx
+    image: lsnp/nginx
+    privileged: true
+    volumes:
+      - ./work:/var/www/html
+    restart: always
+    ports:
+      - "82:80"
+      - "445:443"
+    networks:
+      - net
+
+  supervisor:
+    container_name: lsnp-supervisor
+    build: ./docker/supervisor
+    image: lsnp/supervisor
+    privileged: true
+    volumes:
+      - ./work:/var/www/html
+      - ./docker/supervisor/etc:/etc/supervisor/conf.d
+    restart: always
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
