@@ -9,8 +9,8 @@ services:
     restart: always
     privileged: true
     ports:
-      - "9003:9000"
-      - "9502:9501"
+      - "9000:9000"
+      - "9501:9501"
     networks:
       - net
 
@@ -23,8 +23,8 @@ services:
       - ./work:/var/www/html
     restart: always
     ports:
-      - "82:80"
-      - "445:443"
+      - "80:80"
+      - "443:443"
     networks:
       - net
 
