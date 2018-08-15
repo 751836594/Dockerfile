@@ -3,6 +3,13 @@
 
 <ul>
 <li>
+	新增lsnp镜像:php7.2(php-fpm(7.2)+nginx+supervisor+phalcon+swoole)
+	<ul>
+	<li>PS:镜像以docker-composer管理</li>
+	<li>生成容器: cd 到目录lsnp;执行docker-compose up -d --build</li>
+	</ul>
+</li>
+<li>
 	新增php镜像:php7.1-alpine(php-fpm(7.1)+nginx+supervisor)
 	<ul>
 	<li>PS:镜像以alpine为基础镜像,总镜像170M</li>
